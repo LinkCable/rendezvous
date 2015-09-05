@@ -14,7 +14,7 @@ import AVFoundation
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet weak var rSubtitle: UILabel!
     @IBOutlet weak var rTitle: UILabel!
