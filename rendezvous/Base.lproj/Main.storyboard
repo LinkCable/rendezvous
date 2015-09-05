@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QUV-UR-6dY">
-                                <rect key="frame" x="137" y="28" width="339" height="437"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feM-H2-GdT">
                                 <rect key="frame" x="267" y="504" width="67" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -33,12 +30,10 @@
                         <constraints>
                             <constraint firstItem="feM-H2-GdT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RUL-yt-PXV"/>
                             <constraint firstItem="feM-H2-GdT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l6M-wU-TEh"/>
-                            <constraint firstItem="QUV-UR-6dY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pbp-Q3-GGO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="VibrateButton" destination="feM-H2-GdT" id="Zme-wU-3Lz"/>
-                        <outlet property="map" destination="QUV-UR-6dY" id="aQk-Bc-I4g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

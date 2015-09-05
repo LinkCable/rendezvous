@@ -20,7 +20,6 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var VibrateButton: UIButton!
     
-    @IBOutlet weak var map: MKMapView!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -49,14 +48,97 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        
         var locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
+        
+        
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-   
+        
+        
+        
         let center = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
+        
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
-        self.map.setRegion(region, animated: false)
+        
+        
+        //self.map.setRegion(region, animated: false)
+        
+        
+        
+        sendDataToServer("\(locValue.latitude)",long:"\(locValue.latitude)")
+        getDataFromServer()
+        
+    }
+    
+    func sendDataToServer(lat: String, long: String){
+        
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.188.22:3000/items")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        
+        var response: NSURLResponse?
+        
+        
+        
+        // create some JSON data and configure the request
+        
+        let jsonString = "json=[{\"lat\":\"\(lat)\",\"long\":\"\(long)\"}]"
+        
+        request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        
+        request.HTTPMethod = "POST"
+        
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
+        
+        
+        // send the request
+        
+        do{
+            
+            try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+            
+        }catch let error as NSError{
+            
+            print(error)
+            
+        }
+        
+        
+        
+        // look at the response
+        
+        print("The response: \(response)")
+        
+        if let httpResponse = response as? NSHTTPURLResponse {
+            
+            print("HTTP response: \(httpResponse.statusCode)")
+            
+        } else {
+            
+            print("No HTTP response")
+            
+        }
+        
+    }
+    
+    
+    
+    func getDataFromServer(){
+        
+        let url = NSURL(string: "http://104.131.188.22:3000")
+        
+        
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            
+        }
+        
+        
+        
+        task.resume()
         
     }
     
