@@ -2,7 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+<<<<<<< HEAD
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+=======
+>>>>>>> origin/master
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,6 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JVo-T8-v6A">
                                 <rect key="frame" x="20" y="136" width="560" height="105"/>
                                 <subviews>
@@ -44,12 +48,33 @@
                             <constraint firstItem="JVo-T8-v6A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="KVE-Up-Llg"/>
                             <constraint firstItem="JVo-T8-v6A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="feY-n0-hpn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JVo-T8-v6A" secondAttribute="trailing" id="vZb-aJ-bIH"/>
+=======
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feM-H2-GdT">
+                                <rect key="frame" x="267" y="278" width="67" height="44"/>
+                                <state key="normal" title="Vibrate"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dIV-qO-wz5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="feM-H2-GdT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9fx-b7-J9M"/>
+                            <constraint firstItem="feM-H2-GdT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tmg-A2-qrn"/>
+>>>>>>> origin/master
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="VibrateButton" destination="feM-H2-GdT" id="Zme-wU-3Lz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="480" y="352"/>
+=======
+            <point key="canvasLocation" x="305" y="389"/>
+>>>>>>> origin/master
         </scene>
     </scenes>
 </document>
