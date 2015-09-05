@@ -49,5 +49,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb472727082897136</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>472727082897136</string>
+    <key>FacebookDisplayName</key>
+    <string>rendezvous</string>
 </dict>
 </plist>
