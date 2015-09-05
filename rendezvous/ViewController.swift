@@ -14,14 +14,12 @@ import AVFoundation
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
     
     @IBOutlet weak var rSubtitle: UILabel!
     @IBOutlet weak var rTitle: UILabel!
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var contacts: UIButton!
-
-class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
     
     let locationManager = CLLocationManager()
     
@@ -195,12 +193,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
     }
     
     
-    
     func getDataFromServer(){
         
         let url = NSURL(string: "http://104.131.188.22:3000")
-        
-        
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             
@@ -208,8 +203,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
             //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
             
         }
-        
-        
         
         task.resume()
         
