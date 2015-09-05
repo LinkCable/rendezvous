@@ -22,13 +22,14 @@
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feM-H2-GdT">
                                 <rect key="frame" x="267" y="504" width="67" height="44"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Vibrate"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dIV-qO-wz5"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45098039215686275" green="0.72549019607843135" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="feM-H2-GdT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RUL-yt-PXV"/>
                             <constraint firstItem="feM-H2-GdT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l6M-wU-TEh"/>

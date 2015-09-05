@@ -28,6 +28,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         // Do any additional setup after loading the view, typically from a nib.
         print("Hello world")
         
+        let label : UILabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.size.width, 120))
+        label.textAlignment = NSTextAlignment.Center
+        label.text = "rendezvous"
+        label.font = UIFont(name: "Quicksand-Regular", size: 48)
+        label.textColor = UIColor.whiteColor()
+        self.view.addSubview(label)
+        
         
         self.locationManager.requestAlwaysAuthorization()
         

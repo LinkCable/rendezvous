@@ -20,6 +20,9 @@
 		4A9833571B9A8BC500C5D101 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9833561B9A8BC500C5D101 /* ExtensionDelegate.swift */; };
 		4A9833591B9A8BC500C5D101 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9833581B9A8BC500C5D101 /* NotificationController.swift */; };
 		4A98335B1B9A8BC500C5D101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A98335A1B9A8BC500C5D101 /* Assets.xcassets */; };
+		4ABB66741B9AD6CA006E2B47 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB66711B9AD6CA006E2B47 /* Quicksand-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
+		4ABB66751B9AD6CA006E2B47 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB66721B9AD6CA006E2B47 /* Quicksand-Light.ttf */; settings = {ASSET_TAGS = (); }; };
+		4ABB66761B9AD6CA006E2B47 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ABB66731B9AD6CA006E2B47 /* Quicksand-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		4A9833581B9A8BC500C5D101 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		4A98335A1B9A8BC500C5D101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A98335C1B9A8BC500C5D101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ABB66711B9AD6CA006E2B47 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Bold.ttf"; path = "../../Library/Fonts/Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		4ABB66721B9AD6CA006E2B47 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Light.ttf"; path = "../../Library/Fonts/Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		4ABB66731B9AD6CA006E2B47 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Quicksand-Regular.ttf"; path = "../../Library/Fonts/Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		4A9833231B9A8BC500C5D101 = {
 			isa = PBXGroup;
 			children = (
+				4ABB669F1B9AD732006E2B47 /* Resources */,
 				8B9C6B741B9AC7CC00CDC3D4 /* Frameworks */,
 				4A98332E1B9A8BC500C5D101 /* rendezvous */,
 				4A9833421B9A8BC500C5D101 /* rendezvous WatchKit App */,
@@ -166,6 +173,16 @@
 				4A9833531B9A8BC500C5D101 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ABB669F1B9AD732006E2B47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4ABB66711B9AD6CA006E2B47 /* Quicksand-Bold.ttf */,
+				4ABB66721B9AD6CA006E2B47 /* Quicksand-Light.ttf */,
+				4ABB66731B9AD6CA006E2B47 /* Quicksand-Regular.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		8B9C6B741B9AC7CC00CDC3D4 /* Frameworks */ = {
@@ -280,8 +297,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A98333A1B9A8BC500C5D101 /* LaunchScreen.storyboard in Resources */,
+				4ABB66761B9AD6CA006E2B47 /* Quicksand-Regular.ttf in Resources */,
 				4A9833371B9A8BC500C5D101 /* Assets.xcassets in Resources */,
 				4A9833351B9A8BC500C5D101 /* Main.storyboard in Resources */,
+				4ABB66741B9AD6CA006E2B47 /* Quicksand-Bold.ttf in Resources */,
+				4ABB66751B9AD6CA006E2B47 /* Quicksand-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
