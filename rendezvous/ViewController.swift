@@ -14,7 +14,7 @@ import AVFoundation
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet weak var rSubtitle: UILabel!
     @IBOutlet weak var rTitle: UILabel!
@@ -38,6 +38,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         facebook.layer.borderWidth = 1
         facebook.layer.borderColor = UIColor.whiteColor().CGColor
         
+        facebook.addTarget(self, action: "facebookLogin", forControlEvents: UIControlEvents.TouchUpInside)
+        
         contacts.layer.cornerRadius = 5
         contacts.layer.borderWidth = 1
         contacts.layer.borderColor = UIColor.whiteColor().CGColor
@@ -58,17 +60,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
             // User is already logged in, do work such as go to next view controller.
             getUserData()
         }
-        else
-        {
-            let loginView : FBSDKLoginButton = FBSDKLoginButton()
-            self.view.addSubview(loginView)
-            loginView.center = self.view.center
-            loginView.readPermissions = ["public_profile", "email", "user_friends"]
-            loginView.delegate = self
-        }
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+    @IBAction func facebookLogin(sender:AnyObject, error: NSError!) {
+        var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager .logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+            }
+            
+            if (error == nil){
+                var fbLoginResult : FBSDKLoginManagerLoginResult = result
+                if(fbLoginResult.grantedPermissions.contains("email"))
+                {
+                    self.getUserData()
+                }
+            }
+        })
+    }
+    
+    /*func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("User Logged In")
         
         if ((error) != nil)
@@ -86,7 +99,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
                 getUserData()
             }
         }
-    }
+    }*/
     
     func getUserData()
     {
@@ -110,10 +123,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
                 self.result = "\(result)"
             }
         })
-    }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
