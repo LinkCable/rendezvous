@@ -14,11 +14,14 @@ import AVFoundation
 import MapKit
 import CoreLocation
 
-
-
+class ViewController: UIViewController, CLLocationManagerDelegate{
+    
+    @IBOutlet weak var rSubtitle: UILabel!
+    @IBOutlet weak var rTitle: UILabel!
+    @IBOutlet weak var facebook: UIButton!
+    @IBOutlet weak var contacts: UIButton!
 
 class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
-    @IBOutlet weak var VibrateButton: UIButton!
     
     let locationManager = CLLocationManager()
     
@@ -29,15 +32,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("Hello world")
         
-        let label : UILabel = UILabel(frame: CGRectMake(0, 0, self.view.frame.size.width, 120))
-        label.textAlignment = NSTextAlignment.Center
-        label.text = "rendezvous"
-        label.font = UIFont(name: "Quicksand-Regular", size: 48)
-        label.textColor = UIColor.whiteColor()
-        self.view.addSubview(label)
+        rTitle.textAlignment = .Center
+        rSubtitle.textAlignment = .Center
         
+        facebook.layer.cornerRadius = 5
+        facebook.layer.borderWidth = 1
+        facebook.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        contacts.layer.cornerRadius = 5
+        contacts.layer.borderWidth = 1
+        contacts.layer.borderColor = UIColor.whiteColor().CGColor
         
         self.locationManager.requestAlwaysAuthorization()
         

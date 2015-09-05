@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A318D671B9B424000DAECF6 /* rendesvouz.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A318D661B9B424000DAECF6 /* rendesvouz.png */; settings = {ASSET_TAGS = (); }; };
 		4A9833301B9A8BC500C5D101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A98332F1B9A8BC500C5D101 /* AppDelegate.swift */; };
 		4A9833321B9A8BC500C5D101 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9833311B9A8BC500C5D101 /* ViewController.swift */; };
 		4A9833351B9A8BC500C5D101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9833331B9A8BC500C5D101 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4A318D661B9B424000DAECF6 /* rendesvouz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rendesvouz.png; sourceTree = "<group>"; };
 		4A98332C1B9A8BC500C5D101 /* rendezvous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rendezvous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A98332F1B9A8BC500C5D101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A9833311B9A8BC500C5D101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		4ABB669F1B9AD732006E2B47 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A318D661B9B424000DAECF6 /* rendesvouz.png */,
 				8B9C6BAC1B9B294700CDC3D4 /* Quicksand-Regular.ttf */,
 				8B9C6BA91B9B293D00CDC3D4 /* Quicksand-Light.ttf */,
 				8B9C6BA61B9B292300CDC3D4 /* Quicksand-Bold.ttf */,
@@ -315,6 +318,7 @@
 				4A9833371B9A8BC500C5D101 /* Assets.xcassets in Resources */,
 				4A9833351B9A8BC500C5D101 /* Main.storyboard in Resources */,
 				8B9C6BAA1B9B293D00CDC3D4 /* Quicksand-Light.ttf in Resources */,
+				4A318D671B9B424000DAECF6 /* rendesvouz.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
