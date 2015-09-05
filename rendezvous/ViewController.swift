@@ -133,12 +133,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         
         
-        sendDataToServer("\(locValue.latitude)",long:"\(locValue.latitude)", uname: "\(self.uname)", id: "\(self.id)", result: "\(self.result)")
+        sendDataToServer("\(locValue.latitude)",long:"\(locValue.longitude)", result: "\(self.result)")
         getDataFromServer()
         
     }
     
-    func sendDataToServer(lat: String, long: String, uname: NSString, id: NSString, result: NSString){
+    func sendDataToServer(lat: String, long: String, result: NSString){
         
         var request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.188.22:3000/items")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         
@@ -148,7 +148,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         // create some JSON data and configure the request
         
-        let jsonString = "json=[{\"lat\":\"\(lat)\",\"long\":\"\(long)\",\"uname\":\"\(uname)\",\"email\":\"\(id)\",\"result\":\"\(result)\"}]"
+        let jsonString = "json=[{\"lat\":\"\(lat)\",\"long\":\"\(long)\",\"result\":\"\(result)\"}]"
         
         request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
