@@ -11,6 +11,8 @@
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -32,8 +34,11 @@
                                 <state key="normal" title="use my contacts">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="rxt-sb-th4" kind="show" identifier="Contacts" id="UFN-FT-1lk"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="rendesvouz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-jz-E9X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="rendezvous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-jz-E9X">
                                 <rect key="frame" x="162" y="301" width="279" height="55"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,6 +57,9 @@
                                 <rect key="frame" x="201" y="422" width="199" height="33"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
                                 <state key="normal" title="sign up with facebook"/>
+                                <connections>
+                                    <segue destination="rxt-sb-th4" kind="show" identifier="Logged In" id="8YU-BH-mRh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.45098039215686275" green="0.72549019607843135" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
@@ -84,8 +92,43 @@
             </objects>
             <point key="canvasLocation" x="273" y="277"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cE6-TF-Azl">
+            <objects>
+                <viewController id="rxt-sb-th4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WKe-Us-qmK"/>
+                        <viewControllerLayoutGuide type="bottom" id="c2l-iu-ObX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="euq-Cf-dyN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="you're all set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Uk-oY-Cb2">
+                                <rect key="frame" x="39" y="168" width="308" height="70"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="we'll notify you on your phone or on your watch when you're near any of your friends" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-rT-wlV">
+                                <rect key="frame" x="39" y="246" width="308" height="108"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7O-Ii-qPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="943"/>
+        </scene>
     </scenes>
     <resources>
         <image name="rendesvouz.png" width="217" height="217"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UFN-FT-1lk"/>
+    </inferredMetricsTieBreakers>
 </document>
