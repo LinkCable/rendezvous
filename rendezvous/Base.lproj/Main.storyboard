@@ -13,6 +13,8 @@
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
             <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -28,7 +30,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VA-M3-co1">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VA-M3-co1">
                                 <rect key="frame" x="221" y="463" width="156" height="30"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
                                 <state key="normal" title="use my contacts">
@@ -38,22 +40,19 @@
                                     <segue destination="rxt-sb-th4" kind="show" identifier="Contacts" id="UFN-FT-1lk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="rendezvous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-jz-E9X">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="rendezvous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-jz-E9X">
                                 <rect key="frame" x="162" y="301" width="279" height="55"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="for the spontaneous meetings in life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-Xe-hcJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="for the spontaneous meetings in life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nn3-Xe-hcJ">
                                 <rect key="frame" x="139" y="357" width="323" height="21"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rendesvouz.png" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-OJ-3R5">
-                                <rect key="frame" x="209" y="97" width="180" height="180"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-y8-q4n">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-y8-q4n">
                                 <rect key="frame" x="201" y="422" width="199" height="33"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
                                 <state key="normal" title="sign up with facebook"/>
@@ -61,24 +60,40 @@
                                     <segue destination="rxt-sb-th4" kind="show" identifier="Logged In" id="8YU-BH-mRh"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJp-PI-WVt" customClass="circleRing" customModule="rendezvous" customModuleProvider="target">
+                                <rect key="frame" x="209" y="78" width="180" height="180"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55K-pC-EPv" customClass="centralCircleView" customModule="rendezvous" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="50" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="9qe-E9-2B5"/>
+                                            <constraint firstAttribute="height" constant="80" id="bTq-OF-zPs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="2ao-ES-x85"/>
+                                    <constraint firstAttribute="width" constant="180" id="VZX-fG-h1G"/>
+                                    <constraint firstItem="55K-pC-EPv" firstAttribute="centerX" secondItem="qJp-PI-WVt" secondAttribute="centerX" id="kLm-wK-ZQ0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.45098039215686275" green="0.72549019607843135" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="7VA-M3-co1" secondAttribute="trailing" constant="35" id="2KJ-yP-VD5"/>
-                            <constraint firstItem="mIq-OJ-3R5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8uC-OP-FEY"/>
                             <constraint firstItem="zoP-y8-q4n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="C7t-XR-aIA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zoP-y8-q4n" secondAttribute="trailing" constant="35" id="Dgt-Ua-jIx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nn3-Xe-hcJ" secondAttribute="trailing" id="Fpi-Ge-1Cc"/>
                             <constraint firstItem="zoP-y8-q4n" firstAttribute="top" secondItem="Nn3-Xe-hcJ" secondAttribute="bottom" constant="44" id="R3R-80-tah"/>
                             <constraint firstItem="7VA-M3-co1" firstAttribute="top" secondItem="zoP-y8-q4n" secondAttribute="bottom" constant="8" id="Sx6-OZ-cIF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Ne-jz-E9X" secondAttribute="trailing" id="UhY-a5-J8Q"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mIq-OJ-3R5" secondAttribute="trailing" id="Z7F-Ok-Pn7"/>
                             <constraint firstItem="Nn3-Xe-hcJ" firstAttribute="top" secondItem="1Ne-jz-E9X" secondAttribute="bottom" constant="1" id="aYN-gC-myD"/>
-                            <constraint firstItem="1Ne-jz-E9X" firstAttribute="top" secondItem="mIq-OJ-3R5" secondAttribute="bottom" constant="24" id="qv3-Fo-glQ"/>
+                            <constraint firstItem="qJp-PI-WVt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sdy-ae-IYC"/>
                             <constraint firstItem="7VA-M3-co1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="uXE-w4-9Bl"/>
                             <constraint firstItem="1Ne-jz-E9X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vyk-Wh-krm"/>
                             <constraint firstItem="Nn3-Xe-hcJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wb2-7o-YoA"/>
-                            <constraint firstItem="mIq-OJ-3R5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="77" id="zUf-Ke-iCO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -124,9 +139,49 @@
             </objects>
             <point key="canvasLocation" x="273" y="943"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="T8G-Ib-pnO">
+            <objects>
+                <viewController id="jrx-iY-slm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="blV-z9-Yf8"/>
+                        <viewControllerLayoutGuide type="bottom" id="16Y-hY-u4b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eoy-mS-oh3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="veg-09-8lJ">
+                                <rect key="frame" x="165" y="129" width="270" height="270"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="a friend is nearby!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-V3-7bu">
+                                <rect key="frame" x="192" y="464" width="217" height="28"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="feet away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFI-3H-ucc">
+                                <rect key="frame" x="231" y="500" width="138" height="33"/>
+                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="veg-09-8lJ" firstAttribute="top" secondItem="blV-z9-Yf8" secondAttribute="bottom" constant="109" id="17I-ne-V3N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="veg-09-8lJ" secondAttribute="trailing" id="P56-8x-g84"/>
+                            <constraint firstItem="veg-09-8lJ" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" id="wmv-yq-mOO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LKZ-j7-gCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="929"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="rendesvouz.png" width="217" height="217"/>
+        <image name="compass.png" width="838" height="931"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UFN-FT-1lk"/>

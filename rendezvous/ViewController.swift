@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var contacts: UIButton!
     
+    @IBOutlet weak var logoImage: UIImageView!
     let locationManager = CLLocationManager()
     
     var uname: NSString = ""
@@ -45,6 +46,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         contacts.layer.cornerRadius = 5
         contacts.layer.borderWidth = 1
         contacts.layer.borderColor = UIColor.whiteColor().CGColor
+        
         
         self.locationManager.requestAlwaysAuthorization()
         
@@ -106,6 +108,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func getUserData()
     {
+        
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
@@ -173,6 +176,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         var response: NSURLResponse?
         
+        print(uname)
+        print(id)
         
         
         // create some JSON data and configure the request
