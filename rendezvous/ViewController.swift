@@ -14,20 +14,19 @@ import AVFoundation
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
     
     @IBOutlet weak var rSubtitle: UILabel!
     @IBOutlet weak var rTitle: UILabel!
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var contacts: UIButton!
-
-class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginButtonDelegate{
     
     let locationManager = CLLocationManager()
     
     var uname: NSString = ""
     var id: NSString = ""
     var result: NSString = ""
+    var friends: NSArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +85,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
             if result.grantedPermissions.contains("email")
             {
                 getUserData()
+                // Send allison data about my friends on Log in
             }
         }
     }
@@ -112,6 +112,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
                 self.result = "\(result)"
             }
         })
+        
+        var fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+        fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
+            
+            if error == nil {
+                
+                print("Friends are : \(result)")
+                
+            } else {
+                
+                print("Error Getting Friends \(error)");
+                
+            }
+        }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
@@ -138,12 +152,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         
         
-        sendDataToServer("\(locValue.latitude)",long:"\(locValue.longitude)", result: "\(self.result)")
+        sendDataToServer("\(locValue.latitude)",long:"\(locValue.longitude)",id:"\(self.id)", uname:"\(self.uname)")
         getDataFromServer()
         
     }
     
-    func sendDataToServer(lat: String, long: String, result: NSString){
+    func sendDataToServer(lat: String, long: String, id: NSString, uname: NSString){
         
         var request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.188.22:3000/items")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         
@@ -153,7 +167,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         // create some JSON data and configure the request
         
-        let jsonString = "json=[{\"lat\":\"\(lat)\",\"long\":\"\(long)\",\"result\":\"\(result)\"}]"
+        let jsonString = "json={\"lat\":\"\(lat)\",\"long\":\"\(long)\",\"id\":\"\(id)\",\"uname\":\"\(uname)\"}"
         
         request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
@@ -229,4 +243,3 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
     }
 
 }
-
