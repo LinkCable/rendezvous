@@ -7,8 +7,7 @@
 //  Varun was here too xD
 //
 
-import Parse
-import Bolts
+
 import UIKit
 import AudioToolbox
 import AVFoundation
@@ -35,10 +34,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         self.locationManager.requestWhenInUseAuthorization()
         
         if(CLLocationManager.locationServicesEnabled()){
-            //locationManager.delegate = self
-            //locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            //locationManager.requestAlwaysAuthorization()
-            //locationManager.startUpdatingLocation()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
         }
     }
     
@@ -46,22 +45,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         var locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-        
+   
         let center = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
         self.map.setRegion(region, animated: false)
-        let currentLocation = CLLocation()
         
-        var locationLat = currentLocation.coordinate.latitude
-        var locationLong = currentLocation.coordinate.longitude
-        if locationManager.location != nil {
-            print("locations = \(locationLat) \(locationLong)\(currentLocation.coordinate.latitude)\(currentLocation.coordinate.longitude)")
-            print()
-        }
-        else{
-            print("locationManager.location is nil")
-        }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError){
