@@ -18,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet weak var rSubtitle: UILabel!
     @IBOutlet weak var rTitle: UILabel!
+
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var contacts: UIButton!
     
@@ -62,7 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
     
-    @IBAction func facebookLogin(sender:AnyObject, error: NSError!) {
+    @IBAction func facebookLogin() {
         var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager .logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
             
