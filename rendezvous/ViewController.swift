@@ -35,10 +35,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         self.locationManager.requestWhenInUseAuthorization()
         
         if(CLLocationManager.locationServicesEnabled()){
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
+            //locationManager.delegate = self
+            //locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            //locationManager.requestAlwaysAuthorization()
+            //locationManager.startUpdatingLocation()
         }
     }
     
