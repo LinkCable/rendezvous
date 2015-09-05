@@ -22,6 +22,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
     
     let locationManager = CLLocationManager()
     
+    var uname: NSString = ""
+    var id: NSString = ""
+    var result: NSString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +53,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
+            getUserData()
         }
         else
         {
@@ -75,9 +80,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
-                // Do work
+                getUserData()
             }
         }
+    }
+    
+    func getUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                print("User Name is: \(userName)")
+                let userId : NSString = result.valueForKey("id") as! NSString
+                print ("User ID is: \(userId)")
+                self.uname = userName
+                self.id = userId
+                self.result = "\(result)"
+            }
+        })
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
@@ -86,7 +115,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
-        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
         
         
@@ -104,12 +133,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         
         
-        sendDataToServer("\(locValue.latitude)",long:"\(locValue.latitude)")
+        sendDataToServer("\(locValue.latitude)",long:"\(locValue.latitude)", uname: "\(self.uname)", id: "\(self.id)", result: "\(self.result)")
         getDataFromServer()
         
     }
     
-    func sendDataToServer(lat: String, long: String){
+    func sendDataToServer(lat: String, long: String, uname: NSString, id: NSString, result: NSString){
         
         var request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.188.22:3000/items")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         
@@ -119,7 +148,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         // create some JSON data and configure the request
         
-        let jsonString = "json=[{\"lat\":\"\(lat)\",\"long\":\"\(long)\"}]"
+        let jsonString = "json=[{\"lat\":\"\(lat)\",\"long\":\"\(long)\",\"uname\":\"\(uname)\",\"email\":\"\(id)\",\"result\":\"\(result)\"}]"
         
         request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         
@@ -127,6 +156,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
+        print(jsonString)
         
         
         // send the request
@@ -145,11 +175,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         // look at the response
         
-        print("The response: \(response)")
+        //print("The response: \(response)")
         
         if let httpResponse = response as? NSHTTPURLResponse {
             
-            print("HTTP response: \(httpResponse.statusCode)")
+            //print("HTTP response: \(httpResponse.statusCode)")
             
         } else {
             
@@ -169,7 +199,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, FBSDKLoginBut
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             
-            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            // Handle response here!
+            //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
             
         }
         
