@@ -10,11 +10,10 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreBluetooth
+import AudioToolbox
+import Foundation
 
 class locator: UIViewController, CLLocationManagerDelegate {
-
-    
-    //RSSI[dbm] = −(10n log10(d) − A)
     
     var rssi: Int = 0
     var meters: Double = 0
@@ -37,25 +36,7 @@ class locator: UIViewController, CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
-
-        
     }
-    
-    /**
-    func rssiToMeters() {
-        if self.rssi > 0 {
-            self.meters = 0
-        }
-        let ratio: Double = Double(Float(rssi)/Float(self.SIGPOWER));
-        
-        if (ratio < 1.0) {
-            self.meters = pow(ratio,10);
-        }
-        else {
-            self.meters =  (0.89976) * pow(ratio,7.7095) + 0.111;
-        }
-        feet = meters * 3
-    }*/
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         print(beacons)
@@ -65,10 +46,16 @@ class locator: UIViewController, CLLocationManagerDelegate {
             self.feet = self.meters * 3
         }
         
+        //var vibrateTimer: NSTimer! = nil
+
+        
         if self.feet < 0 {
             self.feet = 0
         }
         
+        if(self.feet < 16){
+            vibrate()
+        }
         print(self.meters)
         print(self.feet)
         
@@ -76,6 +63,10 @@ class locator: UIViewController, CLLocationManagerDelegate {
             let convertedStr: String = NSString(format: "%.2f", self.feet) as String
             self.distance.text = convertedStr + " feet away"
         })
+    }
+    
+    func vibrate(){
+        AudioServicesPlayAlertSound(4095);
     }
 
 }
