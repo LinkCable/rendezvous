@@ -57,6 +57,9 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        if(beacons.count > 0) {
+            print("Closest beacon's rssi : " + String(beacons[0].rssi))
+        }
         print(beacons)
         
         if(beacons.count > 0){
