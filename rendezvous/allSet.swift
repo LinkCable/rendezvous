@@ -22,6 +22,8 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
     var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "")
     var periphmanager: CBPeripheralManager! = nil
     var meters: Double = 0
+    var lat: NSNumber! = nil
+    var long: NSNumber! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +87,18 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
     * Initialize the peripheral manager which is responsible for broadcasting
     */
     func beginBroadcasting(){
+        
+        var locValue:CLLocationCoordinate2D = self.locationManager.location!.coordinate
+        self.lat = locValue.latitude
+        self.long = locValue.longitude
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+
+        var majVal = self.lat
+        var minVal = self.long
+
+        region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!,identifier: "")
+        region.setValue(majVal, forKey: "major")
+        region.setValue(minVal, forKey: "minor")
         self.periphmanager = CBPeripheralManager(delegate: self, queue: nil)
     }
 
