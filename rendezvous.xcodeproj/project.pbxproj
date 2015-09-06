@@ -78,17 +78,17 @@
 		4A318D901B9B999400DAECF6 /* centralCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = centralCircleView.swift; sourceTree = "<group>"; };
 		4A318D921B9B9EC200DAECF6 /* circleRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circleRing.swift; sourceTree = "<group>"; };
 		4A318D941B9BBB7F00DAECF6 /* rendezvous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rendezvous.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8AF2701B9BCC48001D73A1 /* Rendezvous.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rendezvous.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A8AF2711B9BCC48001D73A1 /* Rendezvous.temp_caseinsensitive_rename.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Rendezvous.temp_caseinsensitive_rename.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A98332F1B9A8BC500C5D101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A9833311B9A8BC500C5D101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A9833341B9A8BC500C5D101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A9833361B9A8BC500C5D101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A9833391B9A8BC500C5D101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A98333B1B9A8BC500C5D101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A98333E1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Rendezvous.temp_caseinsensitive_rename.app; path = "/Users/phil/GitHub/rendezvous/build/Debug-watchos/Rendezvous.temp_caseinsensitive_rename.app"; sourceTree = "<absolute>"; };
 		4A9833441B9A8BC500C5D101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4A9833461B9A8BC500C5D101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A9833481B9A8BC500C5D101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A98334D1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = Rendezvous.temp_caseinsensitive_rename.appex; path = "/Users/phil/GitHub/rendezvous/build/Debug-watchos/Rendezvous.temp_caseinsensitive_rename.appex"; sourceTree = "<absolute>"; };
 		4A9833531B9A8BC500C5D101 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		4A9833541B9A8BC500C5D101 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		4A9833561B9A8BC500C5D101 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +133,8 @@
 				4A9833421B9A8BC500C5D101 /* rendezvous WatchKit App */,
 				4A9833511B9A8BC500C5D101 /* rendezvous WatchKit Extension */,
 				4A318D941B9BBB7F00DAECF6 /* rendezvous.app */,
+				4A8AF2701B9BCC48001D73A1 /* Rendezvous.temp_caseinsensitive_rename.app */,
+				4A8AF2711B9BCC48001D73A1 /* Rendezvous.temp_caseinsensitive_rename.appex */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,7 +241,7 @@
 			);
 			name = "rendezvous WatchKit App";
 			productName = "rendezvous WatchKit App";
-			productReference = 4A98333E1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.app */;
+			productReference = 4A8AF2701B9BCC48001D73A1 /* Rendezvous.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		4A98334C1B9A8BC500C5D101 /* rendezvous WatchKit Extension */ = {
@@ -256,7 +258,7 @@
 			);
 			name = "rendezvous WatchKit Extension";
 			productName = "rendezvous WatchKit Extension";
-			productReference = 4A98334D1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.appex */;
+			productReference = 4A8AF2711B9BCC48001D73A1 /* Rendezvous.temp_caseinsensitive_rename.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */

@@ -34,6 +34,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     var result: NSString = ""
     var friends: NSArray = []
     
+    override func viewWillAppear(animated: Bool) {
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            // User is already logged in, do work such as go to next view controller.
+            performSegueWithIdentifier("LoggedIn", sender: nil)
+            getUserData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -70,6 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
+            performSegueWithIdentifier("LoggedIn", sender: nil)
             getUserData()
         }
     }
@@ -81,7 +92,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager){
         
         if(peripheral.state == CBPeripheralManagerState.PoweredOn){
-            var dict: [String:AnyObject] = self.region.peripheralDataWithMeasuredPower(nil) as! [String:AnyObject]
+            let dict: [String:AnyObject] = self.region.peripheralDataWithMeasuredPower(nil) as! [String:AnyObject]
             periphmanager.startAdvertising(dict)
         }
         print(peripheral.state)
