@@ -19,10 +19,9 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
     var friends: NSArray = []
     
     let locationManager = CLLocationManager()
-    let appuid: String! = "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84"
     var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "")
     var periphmanager: CBPeripheralManager! = nil
-    var rssi: Int = 0
+    var meters: Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +49,9 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue == "nearby"){
+        if(segue.identifier == "nearby"){
             let destinationVC:locator = segue.destinationViewController as! locator
-            destinationVC.rssi = self.rssi
+            destinationVC.meters = self.meters
         }
     }
     
@@ -60,7 +59,7 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
         print(beacons)
         
         if(beacons.count > 0){
-            self.rssi = beacons[0].rssi;
+            self.meters = beacons[0].accuracy;
             self.performSegueWithIdentifier("nearby", sender: self)
         }
         
