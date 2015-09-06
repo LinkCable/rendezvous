@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A98333D1B9A8BC500C5D101"
-               BuildableName = "rendezvous WatchKit App.app"
+               BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
                BlueprintName = "rendezvous WatchKit App"
-               ReferencedContainer = "container:rendezvous.xcodeproj">
+               ReferencedContainer = "container:Rendezvous.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-               BuildableName = "rendezvous.app"
+               BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
                BlueprintName = "rendezvous"
-               ReferencedContainer = "container:rendezvous.xcodeproj">
+               ReferencedContainer = "container:Rendezvous.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A98334C1B9A8BC500C5D101"
-               BuildableName = "rendezvous WatchKit Extension.appex"
+               BuildableName = "Rendezvous.temp_caseinsensitive_rename.appex"
                BlueprintName = "rendezvous WatchKit Extension"
-               ReferencedContainer = "container:rendezvous.xcodeproj">
+               ReferencedContainer = "container:Rendezvous.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98333D1B9A8BC500C5D101"
-            BuildableName = "rendezvous WatchKit App.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous WatchKit App"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -88,18 +88,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98333D1B9A8BC500C5D101"
-            BuildableName = "rendezvous WatchKit App.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous WatchKit App"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98333D1B9A8BC500C5D101"
-            BuildableName = "rendezvous WatchKit App.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous WatchKit App"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -120,18 +120,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98333D1B9A8BC500C5D101"
-            BuildableName = "rendezvous WatchKit App.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous WatchKit App"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98333D1B9A8BC500C5D101"
-            BuildableName = "rendezvous WatchKit App.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous WatchKit App"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -67,7 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @IBAction func facebookLogin() {
-        var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager .logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
             
             if ((error) != nil)
@@ -76,7 +76,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
             
             if (error == nil){
-                var fbLoginResult : FBSDKLoginManagerLoginResult = result
+                let fbLoginResult : FBSDKLoginManagerLoginResult = result
                 if(fbLoginResult.grantedPermissions.contains("email"))
                 {
                     self.getUserData()
@@ -130,7 +130,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
         })
         
-        var fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+        let fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
         fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
             
             if error == nil {
@@ -172,7 +172,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func sendDataToServer(lat: String, long: String, id: NSString, uname: NSString){
         
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.188.22:3000/items")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.188.22:3000/items")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         
         var response: NSURLResponse?
         

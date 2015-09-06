@@ -60,29 +60,69 @@
                                     <segue destination="rxt-sb-th4" kind="show" identifier="Logged In" id="8YU-BH-mRh"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJp-PI-WVt" customClass="circleRing" customModule="rendezvous" customModuleProvider="target">
-                                <rect key="frame" x="209" y="78" width="180" height="180"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dv-AA-mKM" customClass="circleRing" customModule="rendezvous" customModuleProvider="target">
+                                <rect key="frame" x="161" y="40" width="280" height="280"/>
                                 <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55K-pC-EPv" customClass="centralCircleView" customModule="rendezvous" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="50" width="80" height="80"/>
-                                        <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WaR-6h-riL" customClass="circleRing" customModule="rendezvous" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="30" width="220" height="220"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJp-PI-WVt" customClass="circleRing" customModule="rendezvous" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="20" width="180" height="180"/>
+                                                <subviews>
+                                                    <view userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55K-pC-EPv" customClass="centralCircleView" customModule="rendezvous" customModuleProvider="target">
+                                                        <rect key="frame" x="50" y="50" width="80" height="80"/>
+                                                        <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="9qe-E9-2B5"/>
+                                                            <constraint firstAttribute="height" constant="80" id="bTq-OF-zPs"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="180" id="2ao-ES-x85"/>
+                                                    <constraint firstAttribute="width" constant="180" id="VZX-fG-h1G"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                        <real key="value" value="70"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="alphaChannel">
+                                                        <real key="value" value="0.59999999999999998"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="9qe-E9-2B5"/>
-                                            <constraint firstAttribute="height" constant="80" id="bTq-OF-zPs"/>
+                                            <constraint firstAttribute="height" constant="220" id="Cdl-A8-Yqa"/>
+                                            <constraint firstAttribute="width" constant="220" id="vmM-PV-RDR"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                <real key="value" value="85"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="alphaChannel">
+                                                <real key="value" value="0.40000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="2ao-ES-x85"/>
-                                    <constraint firstAttribute="width" constant="180" id="VZX-fG-h1G"/>
-                                    <constraint firstItem="55K-pC-EPv" firstAttribute="centerX" secondItem="qJp-PI-WVt" secondAttribute="centerX" id="kLm-wK-ZQ0"/>
-                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alphaChannel">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.45098039215686275" green="0.72549019607843135" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="7VA-M3-co1" secondAttribute="trailing" constant="35" id="2KJ-yP-VD5"/>
+                            <constraint firstItem="8dv-AA-mKM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8y2-Gq-rvT"/>
                             <constraint firstItem="zoP-y8-q4n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="C7t-XR-aIA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zoP-y8-q4n" secondAttribute="trailing" constant="35" id="Dgt-Ua-jIx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nn3-Xe-hcJ" secondAttribute="trailing" id="Fpi-Ge-1Cc"/>
@@ -90,7 +130,6 @@
                             <constraint firstItem="7VA-M3-co1" firstAttribute="top" secondItem="zoP-y8-q4n" secondAttribute="bottom" constant="8" id="Sx6-OZ-cIF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Ne-jz-E9X" secondAttribute="trailing" id="UhY-a5-J8Q"/>
                             <constraint firstItem="Nn3-Xe-hcJ" firstAttribute="top" secondItem="1Ne-jz-E9X" secondAttribute="bottom" constant="1" id="aYN-gC-myD"/>
-                            <constraint firstItem="qJp-PI-WVt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sdy-ae-IYC"/>
                             <constraint firstItem="7VA-M3-co1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="uXE-w4-9Bl"/>
                             <constraint firstItem="1Ne-jz-E9X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vyk-Wh-krm"/>
                             <constraint firstItem="Nn3-Xe-hcJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wb2-7o-YoA"/>

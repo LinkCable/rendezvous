@@ -16,10 +16,8 @@
 		4A9833351B9A8BC500C5D101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9833331B9A8BC500C5D101 /* Main.storyboard */; };
 		4A9833371B9A8BC500C5D101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A9833361B9A8BC500C5D101 /* Assets.xcassets */; };
 		4A98333A1B9A8BC500C5D101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9833381B9A8BC500C5D101 /* LaunchScreen.storyboard */; };
-		4A98333F1B9A8BC500C5D101 /* rendezvous WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4A98333E1B9A8BC500C5D101 /* rendezvous WatchKit App.app */; };
 		4A9833451B9A8BC500C5D101 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9833431B9A8BC500C5D101 /* Interface.storyboard */; };
 		4A9833471B9A8BC500C5D101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A9833461B9A8BC500C5D101 /* Assets.xcassets */; };
-		4A98334E1B9A8BC500C5D101 /* rendezvous WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4A98334D1B9A8BC500C5D101 /* rendezvous WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4A9833551B9A8BC500C5D101 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9833541B9A8BC500C5D101 /* InterfaceController.swift */; };
 		4A9833571B9A8BC500C5D101 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9833561B9A8BC500C5D101 /* ExtensionDelegate.swift */; };
 		4A9833591B9A8BC500C5D101 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9833581B9A8BC500C5D101 /* NotificationController.swift */; };
@@ -58,7 +56,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4A98334E1B9A8BC500C5D101 /* rendezvous WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +66,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				4A98333F1B9A8BC500C5D101 /* rendezvous WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,18 +77,18 @@
 		4A318D6A1B9B7BAE00DAECF6 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 		4A318D901B9B999400DAECF6 /* centralCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = centralCircleView.swift; sourceTree = "<group>"; };
 		4A318D921B9B9EC200DAECF6 /* circleRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circleRing.swift; sourceTree = "<group>"; };
-		4A98332C1B9A8BC500C5D101 /* rendezvous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rendezvous.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A318D941B9BBB7F00DAECF6 /* rendezvous.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rendezvous.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A98332F1B9A8BC500C5D101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A9833311B9A8BC500C5D101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A9833341B9A8BC500C5D101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A9833361B9A8BC500C5D101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A9833391B9A8BC500C5D101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A98333B1B9A8BC500C5D101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A98333E1B9A8BC500C5D101 /* rendezvous WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rendezvous WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A98333E1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Rendezvous.temp_caseinsensitive_rename.app; path = "/Users/phil/GitHub/rendezvous/build/Debug-watchos/Rendezvous.temp_caseinsensitive_rename.app"; sourceTree = "<absolute>"; };
 		4A9833441B9A8BC500C5D101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4A9833461B9A8BC500C5D101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A9833481B9A8BC500C5D101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A98334D1B9A8BC500C5D101 /* rendezvous WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "rendezvous WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A98334D1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = Rendezvous.temp_caseinsensitive_rename.appex; path = "/Users/phil/GitHub/rendezvous/build/Debug-watchos/Rendezvous.temp_caseinsensitive_rename.appex"; sourceTree = "<absolute>"; };
 		4A9833531B9A8BC500C5D101 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		4A9833541B9A8BC500C5D101 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		4A9833561B9A8BC500C5D101 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
@@ -136,18 +132,8 @@
 				4A98332E1B9A8BC500C5D101 /* rendezvous */,
 				4A9833421B9A8BC500C5D101 /* rendezvous WatchKit App */,
 				4A9833511B9A8BC500C5D101 /* rendezvous WatchKit Extension */,
-				4A98332D1B9A8BC500C5D101 /* Products */,
+				4A318D941B9BBB7F00DAECF6 /* rendezvous.app */,
 			);
-			sourceTree = "<group>";
-		};
-		4A98332D1B9A8BC500C5D101 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4A98332C1B9A8BC500C5D101 /* rendezvous.app */,
-				4A98333E1B9A8BC500C5D101 /* rendezvous WatchKit App.app */,
-				4A98334D1B9A8BC500C5D101 /* rendezvous WatchKit Extension.appex */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4A98332E1B9A8BC500C5D101 /* rendezvous */ = {
@@ -236,7 +222,7 @@
 			);
 			name = rendezvous;
 			productName = rendezvous;
-			productReference = 4A98332C1B9A8BC500C5D101 /* rendezvous.app */;
+			productReference = 4A318D941B9BBB7F00DAECF6 /* rendezvous.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4A98333D1B9A8BC500C5D101 /* rendezvous WatchKit App */ = {
@@ -253,7 +239,7 @@
 			);
 			name = "rendezvous WatchKit App";
 			productName = "rendezvous WatchKit App";
-			productReference = 4A98333E1B9A8BC500C5D101 /* rendezvous WatchKit App.app */;
+			productReference = 4A98333E1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
 		4A98334C1B9A8BC500C5D101 /* rendezvous WatchKit Extension */ = {
@@ -270,7 +256,7 @@
 			);
 			name = "rendezvous WatchKit Extension";
 			productName = "rendezvous WatchKit Extension";
-			productReference = 4A98334D1B9A8BC500C5D101 /* rendezvous WatchKit Extension.appex */;
+			productReference = 4A98334D1B9A8BC500C5D101 /* Rendezvous.temp_caseinsensitive_rename.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -297,7 +283,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A9833271B9A8BC500C5D101 /* Build configuration list for PBXProject "rendezvous" */;
+			buildConfigurationList = 4A9833271B9A8BC500C5D101 /* Build configuration list for PBXProject "Rendezvous" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -306,7 +292,7 @@
 				Base,
 			);
 			mainGroup = 4A9833231B9A8BC500C5D101;
-			productRefGroup = 4A98332D1B9A8BC500C5D101 /* Products */;
+			productRefGroup = 4A9833231B9A8BC500C5D101;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -511,7 +497,7 @@
 				INFOPLIST_FILE = "rendezvous WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pennapps.rendezvous.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = Rendezvous.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -528,7 +514,7 @@
 				INFOPLIST_FILE = "rendezvous WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pennapps.rendezvous.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
+				PRODUCT_NAME = Rendezvous.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -549,7 +535,7 @@
 				INFOPLIST_FILE = "rendezvous WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pennapps.rendezvous.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rendezvous.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -571,7 +557,7 @@
 				INFOPLIST_FILE = "rendezvous WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pennapps.rendezvous.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rendezvous.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -595,7 +581,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pennapps.rendezvous;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = rendezvous;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
@@ -616,7 +602,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pennapps.rendezvous;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = rendezvous;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
@@ -625,7 +611,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A9833271B9A8BC500C5D101 /* Build configuration list for PBXProject "rendezvous" */ = {
+		4A9833271B9A8BC500C5D101 /* Build configuration list for PBXProject "Rendezvous" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A98335D1B9A8BC500C5D101 /* Debug */,
