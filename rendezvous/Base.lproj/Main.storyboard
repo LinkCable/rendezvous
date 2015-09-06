@@ -192,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="273" y="943"/>
         </scene>
-        <!--View Controller-->
+        <!--Locator-->
         <scene sceneID="T8G-Ib-pnO">
             <objects>
-                <viewController id="jrx-iY-slm" sceneMemberID="viewController">
+                <viewController id="jrx-iY-slm" customClass="locator" customModule="rendezvous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="blV-z9-Yf8"/>
                         <viewControllerLayoutGuide type="bottom" id="16Y-hY-u4b"/>
@@ -204,10 +204,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="veg-09-8lJ">
-                                <rect key="frame" x="246" y="246" width="108" height="108"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="a friend is nearby!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-V3-7bu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a friend is nearby!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-V3-7bu">
                                 <rect key="frame" x="192" y="412" width="217" height="28"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -219,16 +216,32 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="FIG-o2-cln">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="HB9-GD-F1Z"/>
+                                    <constraint firstAttribute="height" constant="200" id="eUc-ay-3s9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="veg-09-8lJ" firstAttribute="centerY" secondItem="Eoy-mS-oh3" secondAttribute="centerY" id="43r-Tn-qdB"/>
-                            <constraint firstItem="veg-09-8lJ" firstAttribute="centerX" secondItem="Eoy-mS-oh3" secondAttribute="centerX" id="7DY-Xa-vgf"/>
-                            <constraint firstItem="ade-V3-7bu" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" id="9Nk-1B-HJT"/>
-                            <constraint firstItem="ade-V3-7bu" firstAttribute="top" secondItem="veg-09-8lJ" secondAttribute="bottom" constant="58" id="AN3-3d-xJa"/>
+                            <constraint firstItem="ade-V3-7bu" firstAttribute="centerX" secondItem="Eoy-mS-oh3" secondAttribute="centerX" id="4Hs-8V-ycV"/>
+                            <constraint firstItem="ade-V3-7bu" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" constant="172" id="9Nk-1B-HJT"/>
+                            <constraint firstItem="FIG-o2-cln" firstAttribute="centerY" secondItem="Eoy-mS-oh3" secondAttribute="centerY" id="Clc-EK-Xbl"/>
                             <constraint firstItem="iFI-3H-ucc" firstAttribute="top" secondItem="ade-V3-7bu" secondAttribute="bottom" constant="8" id="LnA-wK-z0n"/>
-                            <constraint firstItem="iFI-3H-ucc" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" id="SKP-5c-QeS"/>
+                            <constraint firstItem="iFI-3H-ucc" firstAttribute="centerX" secondItem="Eoy-mS-oh3" secondAttribute="centerX" id="PiK-Q3-JJT"/>
+                            <constraint firstItem="iFI-3H-ucc" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" constant="211" id="SKP-5c-QeS"/>
+                            <constraint firstItem="ade-V3-7bu" firstAttribute="top" secondItem="FIG-o2-cln" secondAttribute="bottom" constant="12" id="eye-GK-Plv"/>
+                            <constraint firstItem="iFI-3H-ucc" firstAttribute="top" secondItem="ade-V3-7bu" secondAttribute="bottom" constant="8" id="ogl-wm-ZNQ"/>
+                            <constraint firstItem="FIG-o2-cln" firstAttribute="centerX" secondItem="Eoy-mS-oh3" secondAttribute="centerX" id="pYa-9R-wCD"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9Nk-1B-HJT"/>
+                                <exclude reference="SKP-5c-QeS"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKZ-j7-gCt" userLabel="First Responder" sceneMemberID="firstResponder"/>

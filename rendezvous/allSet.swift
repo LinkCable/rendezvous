@@ -22,6 +22,7 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
     let appuid: String! = "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84"
     var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "")
     var periphmanager: CBPeripheralManager! = nil
+    var rssi: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,8 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
+        
+        beginBroadcasting()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,10 +50,9 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if(segue == "nearby"){
-            performSegueWithIdentifier("nearby", sender: nil)
+            let destinationVC:locator = segue.destinationViewController as! locator
+            destinationVC.rssi = self.rssi
         }
     }
     
@@ -80,6 +82,9 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
         }
         print("Broadcasting!")
     }
+    
+
+
     
     /*
     * Initialize the peripheral manager which is responsible for broadcasting
