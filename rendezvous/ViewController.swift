@@ -11,11 +11,9 @@
 import UIKit
 import AudioToolbox
 import AVFoundation
-import MapKit
-import CoreLocation
 import CoreBluetooth
 
-class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate{
+class ViewController: UIViewController{
     
     @IBOutlet weak var rSubtitle: UILabel!
     @IBOutlet weak var rTitle: UILabel!
@@ -23,41 +21,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var contacts: UIButton!
     
-    @IBOutlet weak var logoImage: UIImageView!
-    let locationManager = CLLocationManager()
-    let appuid: String! = "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84"
-    var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "")
-    var periphmanager: CBPeripheralManager! = nil
-    
     var uname: NSString = ""
     var id: NSString = ""
     var result: NSString = ""
-    var major: NSString = ""
-    var minor: NSString = ""
+    var major: Int = 0
+    var minor: Int = 0
     let identifier: NSString = "com.app.Rendezvous"
     var friends: NSArray = []
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-            performSegueWithIdentifier("LoggedIn", sender: nil)
-            getUserData()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-            getUserData()
-            beginBroadcasting()
-        }
-        
-        print(appuid);
         
         rTitle.textAlignment = .Center
         rSubtitle.textAlignment = .Center
@@ -72,51 +46,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         contacts.layer.borderWidth = 1
         contacts.layer.borderColor = UIColor.whiteColor().CGColor
         
-        
-        self.locationManager.requestAlwaysAuthorization()
-        
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        locationManager.delegate = self;
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse ) {
-            locationManager.requestWhenInUseAuthorization()
-        }
-        locationManager.startRangingBeaconsInRegion(region)
     }
     
-    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        print(beacons)
-
-        if(beacons.count > 0){
-            self.performSegueWithIdentifier("nearby", sender: self)
+    override func viewDidAppear(animated: Bool) {
+        self.view.hidden = true
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            // User is already logged in, do work such as go to next view controller.
+            getUserData()
+            performSegueWithIdentifier("LoggedIn", sender: self)
         }
 
     }
-    
-    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager){
-        
-        if(peripheral.state == CBPeripheralManagerState.PoweredOn){
-            let dict: [String:AnyObject] = self.region.peripheralDataWithMeasuredPower(nil) as! [String:AnyObject]
-            periphmanager.startAdvertising(dict)
-        }
-        print(peripheral.state)
-    }
-    
-    func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager, error: NSError?) {
-        if error != nil{
-            print(error)
-        }
-        print("Broadcasting!")
-    }
-    
-    /*
-    * Initialize the peripheral manager which is responsible for broadcasting
-    */
-    func beginBroadcasting(){
-            //self.region.
-            self.periphmanager = CBPeripheralManager(delegate: self, queue: nil)
-    }
-
     
     @IBAction func facebookLogin() {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
@@ -128,22 +69,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             }
             
             if (error == nil){
-                var fbLoginResult : FBSDKLoginManagerLoginResult! = result
+                let fbLoginResult : FBSDKLoginManagerLoginResult! = result
                 if(fbLoginResult != nil)
                 {
                     if(fbLoginResult.grantedPermissions.contains("email")){
                         self.getUserData()
+                        self.performSegueWithIdentifier("LoggedIn", sender: self)
                         
+
                         // We ned major and minor
-                        var strid = "\(self.id)"
+                        let strid = "\(self.id)"
                         
                         let majorRange = Range(start: strid.startIndex, end: strid.startIndex.advancedBy(4));
                         
                         let minorRange = Range(start: strid.startIndex.advancedBy(5), end: strid.startIndex.advancedBy(9))
-                        self.major = Int(strid.substringWithRange(majorRange))
-                        self.minor = Int(strid.substringWithRange(minorRange))
-                        
-                        self.beginBroadcasting()
+                        self.major = Int(strid.substringWithRange(majorRange))!
+                        self.minor = Int(strid.substringWithRange(minorRange))!
+
                     }
                 }
             }
@@ -189,22 +131,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         }
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError){
-        print("Error while updating location " + error.localizedDescription)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "LoggedIn") {
+            //get a reference to the destination view controller
+            let destinationVC:allSet = segue.destinationViewController as! allSet
+            
+            //set properties on the destination view controller
+            destinationVC.uname = self.uname
+            destinationVC.id = self.id
+            destinationVC.result = self.result
+            destinationVC.friends = self.friends
+            //etc...
+        }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func buttonPressed(sender: AnyObject) {
-        AudioServicesPlayAlertSound(SystemSoundID(4095))
-    }
-    
-    
-    
-    
-    
     
 }

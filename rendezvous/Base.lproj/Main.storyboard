@@ -57,7 +57,7 @@
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
                                 <state key="normal" title="sign up with facebook"/>
                                 <connections>
-                                    <segue destination="rxt-sb-th4" kind="show" identifier="Logged In" id="8YU-BH-mRh"/>
+                                    <segue destination="rxt-sb-th4" kind="show" identifier="LoggedIn" id="8YU-BH-mRh"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dv-AA-mKM" customClass="circleRing" customModule="rendezvous" customModuleProvider="target">
@@ -144,12 +144,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="273" y="277"/>
+            <point key="canvasLocation" x="273" y="157"/>
         </scene>
-        <!--View Controller-->
+        <!--All Set-->
         <scene sceneID="cE6-TF-Azl">
             <objects>
-                <viewController id="rxt-sb-th4" sceneMemberID="viewController">
+                <viewController id="rxt-sb-th4" customClass="allSet" customModule="rendezvous" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WKe-Us-qmK"/>
                         <viewControllerLayoutGuide type="bottom" id="c2l-iu-ObX"/>
@@ -185,7 +185,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="jrx-iY-slm" kind="showDetail" identifier="nearby" id="5uT-Tc-zbX"/>
+                        <segue destination="jrx-iY-slm" kind="show" identifier="nearby" id="5uT-Tc-zbX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7O-Ii-qPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,16 +205,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="compass.png" translatesAutoresizingMaskIntoConstraints="NO" id="veg-09-8lJ">
-                                <rect key="frame" x="165" y="129" width="270" height="270"/>
+                                <rect key="frame" x="246" y="246" width="108" height="108"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="a friend is nearby!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-V3-7bu">
-                                <rect key="frame" x="192" y="464" width="217" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="a friend is nearby!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-V3-7bu">
+                                <rect key="frame" x="192" y="412" width="217" height="28"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="feet away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFI-3H-ucc">
-                                <rect key="frame" x="231" y="500" width="138" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="feet away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFI-3H-ucc">
+                                <rect key="frame" x="231" y="448" width="138" height="33"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -222,21 +222,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="veg-09-8lJ" firstAttribute="top" secondItem="blV-z9-Yf8" secondAttribute="bottom" constant="109" id="17I-ne-V3N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="veg-09-8lJ" secondAttribute="trailing" id="P56-8x-g84"/>
-                            <constraint firstItem="veg-09-8lJ" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" id="wmv-yq-mOO"/>
+                            <constraint firstItem="veg-09-8lJ" firstAttribute="centerY" secondItem="Eoy-mS-oh3" secondAttribute="centerY" id="43r-Tn-qdB"/>
+                            <constraint firstItem="veg-09-8lJ" firstAttribute="centerX" secondItem="Eoy-mS-oh3" secondAttribute="centerX" id="7DY-Xa-vgf"/>
+                            <constraint firstItem="ade-V3-7bu" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" id="9Nk-1B-HJT"/>
+                            <constraint firstItem="ade-V3-7bu" firstAttribute="top" secondItem="veg-09-8lJ" secondAttribute="bottom" constant="58" id="AN3-3d-xJa"/>
+                            <constraint firstItem="iFI-3H-ucc" firstAttribute="top" secondItem="ade-V3-7bu" secondAttribute="bottom" constant="8" id="LnA-wK-z0n"/>
+                            <constraint firstItem="iFI-3H-ucc" firstAttribute="leading" secondItem="Eoy-mS-oh3" secondAttribute="leadingMargin" id="SKP-5c-QeS"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKZ-j7-gCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="929"/>
+            <point key="canvasLocation" x="1012" y="943"/>
         </scene>
     </scenes>
     <resources>
         <image name="compass.png" width="838" height="931"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UFN-FT-1lk"/>
+        <segue reference="8YU-BH-mRh"/>
     </inferredMetricsTieBreakers>
 </document>
