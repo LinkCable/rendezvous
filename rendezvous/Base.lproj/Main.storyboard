@@ -37,7 +37,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rxt-sb-th4" kind="show" identifier="Contacts" id="UFN-FT-1lk"/>
+                                    <segue destination="rxt-sb-th4" kind="show" identifier="LoggedIn" id="UFN-FT-1lk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="rendezvous" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-jz-E9X">
@@ -158,21 +158,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="you're all set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Uk-oY-Cb2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="you're all set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Uk-oY-Cb2">
                                 <rect key="frame" x="39" y="168" width="308" height="70"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="we'll notify you on your phone or on your watch when you're near any of your friends" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-rT-wlV">
-                                <rect key="frame" x="39" y="246" width="308" height="108"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="we'll notify you on your phone or on your watch when you're near any of your friends" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-rT-wlV">
+                                <rect key="frame" x="39" y="246" width="308" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="rzN-j3-BsK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eP1-rT-wlV" firstAttribute="leading" secondItem="euq-Cf-dyN" secondAttribute="leadingMargin" id="HJB-Mm-F53"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Uk-oY-Cb2" secondAttribute="trailing" id="Y69-SV-BE3"/>
+                            <constraint firstItem="8Uk-oY-Cb2" firstAttribute="leading" secondItem="euq-Cf-dyN" secondAttribute="leadingMargin" id="dHS-ky-Z6U"/>
+                            <constraint firstItem="8Uk-oY-Cb2" firstAttribute="top" secondItem="WKe-Us-qmK" secondAttribute="bottom" constant="148" id="eFj-Md-VC5"/>
+                            <constraint firstItem="eP1-rT-wlV" firstAttribute="top" secondItem="8Uk-oY-Cb2" secondAttribute="bottom" constant="8" id="xlA-hM-Rpw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="jrx-iY-slm" kind="showDetail" identifier="nearby" id="5uT-Tc-zbX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7O-Ii-qPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
