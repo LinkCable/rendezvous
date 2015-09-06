@@ -65,12 +65,16 @@ class locator: UIViewController, CLLocationManagerDelegate {
             self.feet = self.meters * 3
         }
         
+        if self.feet < 0 {
+            self.feet = 0
+        }
+        
         print(self.meters)
         print(self.feet)
         
         dispatch_async(dispatch_get_main_queue(), {
-            let convertedStr: String = NSString(format: "%.4f", self.feet) as String
-            self.distance.text = convertedStr + " feet away!"
+            let convertedStr: String = NSString(format: "%.2f", self.feet) as String
+            self.distance.text = convertedStr + " feet away"
         })
     }
 
