@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-               BuildableName = "rendezvous.app"
+               BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
                BlueprintName = "rendezvous"
-               ReferencedContainer = "container:rendezvous.xcodeproj">
+               ReferencedContainer = "container:Rendezvous.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-            BuildableName = "rendezvous.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-            BuildableName = "rendezvous.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-            BuildableName = "rendezvous.app"
+            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
             BlueprintName = "rendezvous"
-            ReferencedContainer = "container:rendezvous.xcodeproj">
+            ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

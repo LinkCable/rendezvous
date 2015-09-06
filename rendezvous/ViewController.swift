@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var facebook: UIButton!
     @IBOutlet weak var contacts: UIButton!
     
+    @IBOutlet weak var logoImage: UIImageView!
     let locationManager = CLLocationManager()
     let appuid: String! = "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84"
     var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "Ya Boi")
@@ -50,6 +51,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         contacts.layer.borderWidth = 1
         contacts.layer.borderColor = UIColor.whiteColor().CGColor
         
+        
         self.locationManager.requestAlwaysAuthorization()
         
         self.locationManager.requestWhenInUseAuthorization()
@@ -73,7 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @IBAction func facebookLogin() {
-        var fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager .logInWithReadPermissions(["email"], handler: { (result, error) -> Void in
             
             if ((error) != nil)
@@ -95,6 +97,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func getUserData()
     {
+        
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
@@ -116,7 +119,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
         })
         
-        var fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
+        let fbRequest = FBSDKGraphRequest(graphPath:"/me/friends", parameters: nil);
         fbRequest.startWithCompletionHandler { (connection : FBSDKGraphRequestConnection!, result : AnyObject!, error : NSError!) -> Void in
             
             if error == nil {
@@ -149,90 +152,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    /*
-    func sendDataToServer(lat: String, long: String, id: NSString, uname: NSString){
-    
-    var request = NSMutableURLRequest(URL: NSURL(string: "http://104.131.188.22:3001/items")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
-    
-    var response: NSURLResponse?
-    
-    
-    
-    // create some JSON data and configure the request
-    
-    let jsonString = "json={\"lat\":\"\(lat)\",\"long\":\"\(long)\",\"id\":\"\(id)\",\"uname\":\"\(uname)\"}"
-    
-    request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-    
-    request.HTTPMethod = "POST"
-    
-    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    
-    print(jsonString)
-    
-    
-    // send the request
-    
-    do{
-    
-    try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
-    
-    }catch let error as NSError{
-    
-    print(error)
-    
-    }
-    
-    
-    
-    // look at the response
-    
-    //print("The response: \(response)")
-    
-    if let httpResponse = response as? NSHTTPURLResponse {
-    
-    // print("HTTP response: \(httpResponse.statusCode)")
-    
-    } else {
-    
-    print("No HTTP response")
-    
-    }
-    
-    }
-    
-    
-    func getDataFromServer(){
-    
-    let url = NSURL(string: "http://104.131.188.22:3000")
-    
-    let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-    
-    // Handle response here!
-    //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
-    
-    }
-    
-    task.resume()
-    
-    }
-
-*/
-
 }

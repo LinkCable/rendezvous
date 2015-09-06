@@ -8,16 +8,34 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="rendezvous_WatchKit_App" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Rendezvous_temp_caseinsensitive_rename" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="friend nearby!" id="H6a-0C-jjK"/>
+                        <label alignment="center" text="feet away" id="Rvy-UR-p38">
+                            <color key="textColor" red="0.45098039220000002" green="0.72549019609999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="8cF-qX-306">
+            <objects>
+                <controller hidesWhenLoading="NO" id="ZxK-Pt-c3x">
+                    <items>
+                        <imageView width="85" height="89" alignment="center" image="compass.png" id="GDa-Su-cQB"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="441" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="left" text="friend 15ft away!" id="IdU-wH-bcW"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
@@ -31,11 +49,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="rendezvous_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <imageView width="133" height="138" alignment="left" image="rendesvouz.png" id="GDa-Su-cQB"/>
-                    </items>
-                </controller>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Rendezvous_temp_caseinsensitive_rename" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
