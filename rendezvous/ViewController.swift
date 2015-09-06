@@ -80,13 +80,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
         if (FBSDKAccessToken.currentAccessToken() != nil)
         {
             // User is already logged in, do work such as go to next view controller.
-            performSegueWithIdentifier("LoggedIn", sender: nil)
+            performSegueWithIdentifier("LoggedIn", sender: self)
             getUserData()
         }
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         print(beacons)
+        if(beacons.count > 0){
+            self.performSegueWithIdentifier("nearby", sender: self)
+        }
     }
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager){
