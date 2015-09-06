@@ -243,6 +243,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="distance" destination="iFI-3H-ucc" id="JHP-PD-WRQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKZ-j7-gCt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
