@@ -99,6 +99,7 @@
 		4A98335C1B9A8BC500C5D101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4ACC32B81B9C01C500D092D6 /* allSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allSet.swift; sourceTree = "<group>"; };
 		4ACC32BA1B9C0BB700D092D6 /* locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = locator.swift; sourceTree = "<group>"; };
+		4ACC32BC1B9C396900D092D6 /* rendezvous.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = rendezvous.entitlements; sourceTree = "<group>"; };
 		8B9C6BA61B9B292300CDC3D4 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		8B9C6BA91B9B293D00CDC3D4 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		8B9C6BAC1B9B294700CDC3D4 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		4A98332E1B9A8BC500C5D101 /* rendezvous */ = {
 			isa = PBXGroup;
 			children = (
+				4ACC32BC1B9C396900D092D6 /* rendezvous.entitlements */,
 				4A98332F1B9A8BC500C5D101 /* AppDelegate.swift */,
 				4A9833311B9A8BC500C5D101 /* ViewController.swift */,
 				4A9833331B9A8BC500C5D101 /* Main.storyboard */,
@@ -280,6 +282,11 @@
 					4A98332B1B9A8BC500C5D101 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = FBATCS44C9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4A98333D1B9A8BC500C5D101 = {
 						CreatedOnToolsVersion = 7.0;
@@ -580,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = rendezvous/rendezvous.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -601,6 +609,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = rendezvous/rendezvous.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
