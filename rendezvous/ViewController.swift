@@ -32,6 +32,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     var uname: NSString = ""
     var id: NSString = ""
     var result: NSString = ""
+    var major: NSString = ""
+    var minor: NSString = ""
+    let identifier: NSString = "com.app.Rendezvous"
     var friends: NSArray = []
     
     override func viewWillAppear(animated: Bool) {
@@ -82,8 +85,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        /*if(beacons.count > 0){
-        }*/
         print(beacons)
 
         if(beacons.count > 0){
@@ -112,6 +113,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     * Initialize the peripheral manager which is responsible for broadcasting
     */
     func beginBroadcasting(){
+            //self.region.
             self.periphmanager = CBPeripheralManager(delegate: self, queue: nil)
     }
 
@@ -133,7 +135,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                         self.getUserData()
                         
                         // We ned major and minor
-                        // We need to instantiate peripheral manager
+                        var strid = "\(self.id)"
+                        
+                        let majorRange = Range(start: strid.startIndex, end: strid.startIndex.advancedBy(4));
+                        
+                        let minorRange = Range(start: strid.startIndex.advancedBy(5), end: strid.startIndex.advancedBy(9))
+                        self.major = Int(strid.substringWithRange(majorRange))
+                        self.minor = Int(strid.substringWithRange(minorRange))
+                        
                         self.beginBroadcasting()
                     }
                 }
