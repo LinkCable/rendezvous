@@ -10,9 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreBluetooth
-import WatchConnectivity
 
-class locator: UIViewController, CLLocationManagerDelegate, WCSessionDelegate {
+class locator: UIViewController, CLLocationManagerDelegate {
 
     
     //RSSI[dbm] = −(10n log10(d) − A)
@@ -69,36 +68,10 @@ class locator: UIViewController, CLLocationManagerDelegate, WCSessionDelegate {
         print(self.meters)
         print(self.feet)
         
-        if(self.feet < 0) {
-            self.feet = 0
-        }
-        
         dispatch_async(dispatch_get_main_queue(), {
-            let convertedStr: String = NSString(format: "%.2f", self.feet) as String
+            let convertedStr: String = NSString(format: "%.4f", self.feet) as String
             self.distance.text = convertedStr + " feet away!"
         })
-        if #available(iOS 9.0, *) {
-            if (WCSession.isSupported()) {
-                let session = WCSession.defaultSession()
-                session.delegate = self
-                session.activateSession()
-                
-                if session.paired != true {
-                    print("Apple Watch is not paired")
-                }
-                
-                if session.watchAppInstalled != true {
-                    print("WatchKit app is not installed")
-                }
-                
-                if session.paired {
-                   // session.sendMessage([String: convertedStr], replyHandler: <#T##(([String : AnyObject]) -> Void)?##(([String : AnyObject]) -> Void)?##([String : AnyObject]) -> Void#>, errorHandler: <#T##((NSError) -> Void)?##((NSError) -> Void)?##(NSError) -> Void#>)
-                }
-            } else {
-                print("WatchConnectivity is not supported on this device")
-            }
-        }
-
     }
 
 }
