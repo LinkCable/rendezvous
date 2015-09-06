@@ -60,9 +60,7 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
         print(beacons)
         
         if(beacons.count > 0){
-            
             self.performSegueWithIdentifier("nearby", sender: self)
-            
         }
         
     }
@@ -82,9 +80,6 @@ class allSet: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDe
         }
         print("Broadcasting!")
     }
-    
-
-
     
     /*
     * Initialize the peripheral manager which is responsible for broadcasting

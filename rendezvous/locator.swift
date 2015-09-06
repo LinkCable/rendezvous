@@ -11,12 +11,22 @@ import UIKit
 class locator: UIViewController {
 
     
+    //RSSI[dbm] = −(10n log10(d) − A)
+    
     var rssi: Int = 0
+    var meters: Float = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    func rssiToMeters() {
+        if self.rssi > 0 {
+            self.meters = 0
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
