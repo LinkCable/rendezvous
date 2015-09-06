@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-               BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
+               BuildableName = "rendezvous.app"
                BlueprintName = "rendezvous"
                ReferencedContainer = "container:Rendezvous.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
+            BuildableName = "rendezvous.app"
             BlueprintName = "rendezvous"
             ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
+            BuildableName = "rendezvous.app"
             BlueprintName = "rendezvous"
             ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4A98332B1B9A8BC500C5D101"
-            BuildableName = "Rendezvous.temp_caseinsensitive_rename.app"
+            BuildableName = "rendezvous.app"
             BlueprintName = "rendezvous"
             ReferencedContainer = "container:Rendezvous.xcodeproj">
          </BuildableReference>
