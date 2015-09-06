@@ -13,8 +13,9 @@ import AudioToolbox
 import AVFoundation
 import MapKit
 import CoreLocation
+import CoreBluetooth
 
-class ViewController: UIViewController, CLLocationManagerDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralManagerDelegate{
     
     @IBOutlet weak var rSubtitle: UILabel!
     @IBOutlet weak var rTitle: UILabel!
@@ -26,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     let locationManager = CLLocationManager()
     let appuid: String! = "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84"
     var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "Ya Boi")
+    var periphmanager: CBPeripheralManager! = nil
     
     var uname: NSString = ""
     var id: NSString = ""
@@ -35,6 +37,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.periphmanager = CBPeripheralManager(delegate: self, queue: nil)
         
         print(appuid);
         
@@ -57,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         self.locationManager.requestWhenInUseAuthorization()
         
         locationManager.delegate = self;
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse ) {
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
@@ -73,6 +77,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         print(beacons)
     }
+    
+    func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager){
+        
+        if(peripheral.state == CBPeripheralManagerState.PoweredOn){
+            var dict: [String:AnyObject] = self.region.peripheralDataWithMeasuredPower(nil) as! [String:AnyObject]
+            periphmanager.startAdvertising(dict)
+        }
+        print(peripheral.state)
+    }
+    
+    func peripheralManagerDidStartAdvertising(peripheral: CBPeripheralManager, error: NSError?) {
+        if error != nil{
+            print(error)
+        }
+        print("Broadcasting!")
+    }
+
     
     @IBAction func facebookLogin() {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
