@@ -26,7 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     @IBOutlet weak var logoImage: UIImageView!
     let locationManager = CLLocationManager()
     let appuid: String! = "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84"
-    var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "Ya Boi")
+    var region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "29B1AD96-1DF0-4392-8C8A-7387F9E7BD84")!, identifier: "")
     var periphmanager: CBPeripheralManager! = nil
     
     var uname: NSString = ""
@@ -37,8 +37,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        self.periphmanager = CBPeripheralManager(delegate: self, queue: nil)
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            // User is already logged in, do work such as go to next view controller.
+            getUserData()
+            beginBroadcasting()
+        }
         
         print(appuid);
         
@@ -65,17 +69,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.startRangingBeaconsInRegion(region)
-        
-        
-        if (FBSDKAccessToken.currentAccessToken() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-            getUserData()
-        }
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        /*if(beacons.count > 0){
+        }*/
         print(beacons)
+        
     }
     
     func peripheralManagerDidUpdateState(peripheral: CBPeripheralManager){
@@ -92,6 +92,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
             print(error)
         }
         print("Broadcasting!")
+    }
+    
+    /*
+    * Initialize the peripheral manager which is responsible for broadcasting
+    */
+    func beginBroadcasting(){
+            self.periphmanager = CBPeripheralManager(delegate: self, queue: nil)
     }
 
     
@@ -110,6 +117,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CBPeripheralM
                 {
                     if(fbLoginResult.grantedPermissions.contains("email")){
                         self.getUserData()
+                        
+                        // We ned major and minor
+                        // We need to instantiate peripheral manager
+                        self.beginBroadcasting()
                     }
                 }
             }
